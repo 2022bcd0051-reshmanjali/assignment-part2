@@ -2,15 +2,13 @@ name: CI-CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   test-build-push:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -39,5 +37,5 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/churn-risk-service:latest .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/churn-risk-service:latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/anjali-churn-service:latest .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/anjali-churn-service:latest
